@@ -894,9 +894,9 @@ p {
 }
 .lead {
   margin-bottom: 20px;
-  font-size: 19.599999999999998px;
+  font-size: 18.2px;
   font-weight: 200;
-  line-height: 28px;
+  line-height: 26px;
   color: #000000;
 }
 small {
@@ -6141,8 +6141,6 @@ a.badge:focus {
   right: 0;
   bottom: 0;
   padding: 15px;
-  background: #333333;
-  background: rgba(0, 0, 0, 0.75);
 }
 .carousel-caption h4,
 .carousel-caption p {
@@ -8347,3 +8345,5 @@ ul.sitemap li li li {
     overflow: visible !important;
   }
 }
+
+/* sources hash 40f420b59d8da18a2d630c2d76c35a93 */

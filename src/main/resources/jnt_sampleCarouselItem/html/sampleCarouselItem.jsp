@@ -50,21 +50,25 @@
     </c:when>
     <c:otherwise>
         <div class="container">
-            <div class="carousel-caption">
 
-                <h2>${title}</h2>
 
-                <p class="lead inverse">${lead}</p>
-                <a href="${linkUrl}" class="btn btn-large btn-primary"><i class="fa fa-chevron-right"></i>
-                    <fmt:message key="sampleBootstrapTemplates.message.readMore"/>
-                </a>
-            </div>
-
-            <div class="carousel-img">
+            <%--<div class="carousel-img">--%>
                 <jcr:nodeProperty var="image" node="${currentNode}" name="image"/>
                 <a href="${linkUrl}"><img src="${image.node.url}" alt="${image.node.displayableName}"/></a>
                 <div class="clearfix"></div>
-            </div>
+          
+          		<%--<c:when test="${lead == '.'}">--%>
+                	<div class="carousel-caption">
+                	<h2>${title}</h2>            
+               		<p class="lead inverse">${lead}</p>
+
+               <%-- <a href="${linkUrl}" class="btn btn-large btn-primary"><i class="fa fa-chevron-right"></i>--%>
+                 <%--   <fmt:message key="sampleBootstrapTemplates.message.readMore"/>--%>
+              <%--   </a>--%>
+            		</div>
+               <%--</c:when>--%>
+            <%--</div>--%>
+            
         </div>
     </c:otherwise>
 </c:choose>

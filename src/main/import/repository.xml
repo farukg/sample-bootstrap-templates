@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
     <modules jcr:primaryType="jnt:modules">
-        <sample-bootstrap-templates j:dependencies="bootstrap bootstrap-components contact default event facets search teasers"
+        <sample-bootstrap-templates j:dependencies="bootstrap bootstrap-components circular-navigation contact counter default event facets search teasers usermessages"
                              j:installedModules="sample-bootstrap-templates"
                                   j:modulePriority="0"
                              j:moduleType="templatesSet"
@@ -73,11 +73,7 @@
                                     layout="12"
                                     rowType="predefined">
                                 <footer-container jcr:primaryType="jnt:contentList">
-                                    <rich-text jcr:primaryType="jnt:bigText">
-                                        <j:translation_en jcr:language="en"
-                                             jcr:primaryType="jnt:translation"
-                                             text="&lt;p&gt;&amp;copy; 2002 - 2014 Jahia Solutions Group SA tous droits r&amp;eacute;serv&amp;eacute;s&lt;/p&gt;&#xA;"/>
-                                    </rich-text>
+                                    <counternode jcr:primaryType="jnt:counterNode"/>
                                 </footer-container>
                             </footer-container>
                         </footer>
@@ -126,6 +122,20 @@
                                   layout="12"
                                   rowType="predefined"/>
                             </pagecontent>
+                            <information j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
+                                <j:translation_de jcr:language="de"
+                                       jcr:mixinTypes="mix:title"
+                                       jcr:primaryType="jnt:translation"
+                                       jcr:title="information"/>
+                                <pagecontent jcr:primaryType="jnt:contentList">
+                                    <circularnavigation jcr:primaryType="sysewl:circularNavigation"/>
+                                    <bootstrap-container fluid="false"
+                                             j:expiration="0"
+                                             j:perUser="false"
+                                             jcr:mixinTypes="jmix:cache"
+                                             jcr:primaryType="jnt:bootstrapContainer"/>
+                                </pagecontent>
+                            </information>
                         </_x0031_col>
                         <_x0032_cols j:hiddenTemplate="false" jcr:primaryType="jnt:pageTemplate">
                             <j:translation_en jcr:language="en"
@@ -136,7 +146,7 @@
                                 <pagecontent jcr:primaryType="jnt:contentList">
                                     <pagecontent jcr:mixinTypes="jmix:bootstrapFullComponentRowPredefined"
                                      jcr:primaryType="jnt:bootstrapFullComponent"
-                                     layout="3_9"
+                                     layout="9_3"
                                      rowType="predefined">
                                         <pagecontent-side1 jcr:primaryType="jnt:contentList">
                                             <navigation-menu j:baselineNode="home"
@@ -163,26 +173,6 @@
                                         </pagecontent>
                                     </pagecontent>
                         </_x0032_cols>
-                        <bootstrap-nav jcr:primaryType="jnt:contentList">
-                            <bootstrap-navbar fluid="true"
-                                    inverse="false"
-                                    jcr:primaryType="jnt:bootstrapNavBar"
-                                    responsive="true">
-                                <j:translation_en jcr:language="en"
-                                       jcr:mixinTypes="mix:title"
-                                       jcr:primaryType="jnt:translation"
-                                       jcr:title="Bootstrap Navbar"/>
-                                <navigation-menu j:maxDepth="2"
-                                      j:menuItemView="menuElement"
-                                      j:startLevel="0"
-                                      jcr:primaryType="jnt:bootstrapNavMenu">
-                                    <j:translation_en jcr:language="en"
-                                          jcr:mixinTypes="mix:title"
-                                          jcr:primaryType="jnt:translation"
-                                          jcr:title="Navigation Menu"/>
-                                </navigation-menu>
-                            </bootstrap-navbar>
-                        </bootstrap-nav>
                         <navBar jcr:primaryType="jnt:contentList">
                             <bootstrap-navigation-menu j:maxDepth="2"
                                              j:menuItemView="menuDropdown"
@@ -191,18 +181,75 @@
                                              position="right"/>
                         </navBar>
                         <bootstrap-header jcr:primaryType="jnt:contentList">
-                            <bootstrapmenulanguageswitcher j:view="sampleBootstrapTemplates"
-                                                 jcr:mixinTypes="jmix:renderable"
-                                                 jcr:primaryType="jnt:bootstrapMenuLanguageSwitcher"
-                                                 position="left"
-                                                 typeOfDisplay="flag"/>
-                            <bootstrapmenuloginform j:view="menu"
-                                          jcr:mixinTypes="jmix:renderable"
-                                          jcr:primaryType="jnt:bootstrapMenuLoginForm"
-                                          position="right"/>
-                            <bootstrapmenusimplesearchform jcr:primaryType="jnt:bootstrapMenuSimpleSearchForm"
-                                                 position="right"
-                                                 result="/modules/sample-bootstrap-templates/search-results"/>
+                            <bootstrap-layer-container-rows-a columns="span2, span6, span2, span1, span1"
+                                                    jcr:mixinTypes="jmix:bootstrapFullComponentRowCustom"
+                                                    jcr:primaryType="jnt:bootstrapFullComponent"
+                                                    rowType="custom">
+                                <bootstrap-layer-container-rows-a-0 jcr:primaryType="jnt:contentList">
+                                    <image-from-the-document-manager j:linkType="none" jcr:primaryType="jnt:imageReferenceLink">
+                                        <j:translation_en j:node="/modules/sample-bootstrap-templates/files/bootstrap/img/logo.png"
+                                             jcr:language="en"
+                                             jcr:primaryType="jnt:translation"/>
+                                    </image-from-the-document-manager>
+                                </bootstrap-layer-container-rows-a-0>
+                                <bootstrap-layer-container-rows-a-1 jcr:primaryType="jnt:contentList">
+                                    <navigation-menu j:maxDepth="1"
+                                         j:menuItemView="menuElement"
+                                         j:startLevel="0"
+                                         jcr:primaryType="jnt:bootstrapNavMenu">
+                                        <j:translation_en jcr:language="en"
+                                             jcr:mixinTypes="mix:title"
+                                             jcr:primaryType="jnt:translation"
+                                             jcr:title="Navigation Menu"/>
+                                    </navigation-menu>
+                                </bootstrap-layer-container-rows-a-1>
+                                <bootstrap-layer-container-rows-a-2 jcr:primaryType="jnt:contentList">
+                                    <bootstrapmenuloginform j:view="menu"
+                                                jcr:mixinTypes="jmix:renderable"
+                                                jcr:primaryType="jnt:bootstrapMenuLoginForm"
+                                                position="right"/>
+                                    <or-register divClass="pull-right"
+                                     j:invertCondition="true"
+                                     j:requireLoggedUser="true"
+                                     j:requirePrivilegedUser="false"
+                                     jcr:mixinTypes="jmix:requiredPermissions"
+                                     jcr:primaryType="jnt:siteLink"
+                                     targetPageName="register">
+                                        <j:translation_en jcr:language="en"
+                                             jcr:mixinTypes="mix:title"
+                                             jcr:primaryType="jnt:translation"
+                                             jcr:title="or register"/>
+                                    </or-register>
+                                </bootstrap-layer-container-rows-a-2>
+                                <bootstrap-layer-container-rows-a-3 jcr:primaryType="jnt:contentList">
+                                    <account divClass="accountLink"
+                                 j:invertCondition="false"
+                                 j:requireLoggedUser="true"
+                                 j:requirePrivilegedUser="false"
+                                 jcr:mixinTypes="jmix:requiredPermissions"
+                                 jcr:primaryType="jnt:siteLink"
+                                 targetPageName="account">
+                                        <j:translation_en jcr:language="en"
+                                             jcr:mixinTypes="mix:title"
+                                             jcr:primaryType="jnt:translation"
+                                             jcr:title="Account"/>
+                                    </account>
+                                </bootstrap-layer-container-rows-a-3>
+                                <bootstrap-layer-container-rows-a-4 jcr:primaryType="jnt:contentList">
+                                    <messages divClass="messagesLink"
+                                  j:invertCondition="false"
+                                  j:requireLoggedUser="true"
+                                  j:requirePrivilegedUser="false"
+                                  jcr:mixinTypes="jmix:requiredPermissions"
+                                  jcr:primaryType="jnt:siteLink"
+                                  targetPageName="messages">
+                                        <j:translation_en jcr:language="en"
+                                             jcr:mixinTypes="mix:title"
+                                             jcr:primaryType="jnt:translation"
+                                             jcr:title="Messages"/>
+                                    </messages>
+                                </bootstrap-layer-container-rows-a-4>
+                            </bootstrap-layer-container-rows-a>
                         </bootstrap-header>
                         <detail j:applyOn="jnt:article jnt:event jnt:news jnt:press"
                        j:defaultTemplate="true"

@@ -11,6 +11,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+
 <c:set var="homeNode" value="${renderContext.site.home.path}"/>
 <c:set var="pagePath" value="${fn:substringAfter(renderContext.mainResource.node.path,homeNode)}"/>
 <c:set var="paths" value="${fn:split(pagePath,'/')}"/>

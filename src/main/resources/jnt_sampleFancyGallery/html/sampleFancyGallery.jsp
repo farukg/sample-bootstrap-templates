@@ -20,7 +20,7 @@
 <c:choose>
     <c:when test="${! empty folder.node}">
         <div>
-            <div class="carousel">
+            <div class="flexslider carousel">
                 <c:forEach items="${jcr:getChildrenOfType(folder.node, 'jmix:image')}" var="image" varStatus="status">
                     <c:choose>
                         <c:when test="${jcr:isNodeType(image, 'jmix:thumbnail')}">
